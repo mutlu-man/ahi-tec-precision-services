@@ -5,6 +5,7 @@
 - Den Bereich „Über uns“ mit dem gelieferten Text zu Engpässen, Lieferketten, Teil- und Komplettprozessen sowie inhabergeführter Arbeitsweise ausbauen.
 - Einen übersichtlichen Abschnitt für Zielgruppen und typische Einsatzfälle ergänzen: Fertigungsleiter, Zulieferer, Einkäufer, Serienengpässe, Sortieraktionen und Nachbearbeitung.
 - Die bearbeiteten Werkstoffe sichtbar nennen: Aluminium, Edelstahl, Messing, technische Kunststoffe und Verbundwerkstoffe.
+- Den logistischen Heimvorteil des Standorts Meinerzhagen an der BAB 45 als schnelle Anbindung für Kunden hervorheben.
 - Bestehende Leistungen, Kontaktbereich sowie die separaten Seiten für Impressum und Datenschutz beibehalten.
 
 ## Darstellung
