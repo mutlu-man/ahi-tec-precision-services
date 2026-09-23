@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CheckCircle2, Factory, MapPin, PackageCheck, Route as RoadIcon, Users } from "lucide-react";
 import { Header, Footer } from "@/components/site/Header";
 import heroImage from "@/assets/hero-parts.jpg";
 
@@ -74,6 +75,32 @@ const ABLAUF = [
   },
 ];
 
+const EINSATZBEREICHE = [
+  {
+    icon: Factory,
+    title: "Fertigungsengpässe",
+    text: "Zusätzliche Kapazität, wenn Serienaufträge Ihre internen Linien auslasten oder kurzfristige Bedarfe entstehen.",
+  },
+  {
+    icon: PackageCheck,
+    title: "Sortier- & Prüfaktionen",
+    text: "Gewissenhafte Sicht-, Maß- und 100%-Kontrollen für sichere Lieferketten und dokumentierte Qualität.",
+  },
+  {
+    icon: Users,
+    title: "Montage & Nacharbeit",
+    text: "Baugruppengenaue Montage und saubere Nachbearbeitung, ohne wertvolle interne Kapazitäten zu binden.",
+  },
+];
+
+const WERKSTOFFE = [
+  "Aluminium",
+  "Edelstahl",
+  "Messing",
+  "Technische Kunststoffe",
+  "Verbundwerkstoffe",
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -94,13 +121,13 @@ function Index() {
             Industriedienstleistungen · Meinerzhagen
           </p>
           <h1 className="max-w-3xl text-4xl font-black leading-tight text-primary-foreground sm:text-6xl">
-            Präzision für Ihre Teile –{" "}
-            <span className="text-signal">zuverlässig</span> und termintreu.
+            Präzision und Termintreue für Ihre{" "}
+            <span className="text-signal">Fertigung.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-primary-foreground/80">
-            AHI-TEC übernimmt Montage-, Prüf-, Sortier-, Entgrat- und weitere
-            konventionelle Bearbeitungen von Metall-, Kunststoff- und
-            Elektroteilen – inklusive CNC-Bearbeitung.
+            Wir entlasten Ihre internen Fertigungslinien gezielt – mit Montage,
+            Prüfung, Sortierung, Entgraten, konventioneller Bearbeitung und
+            präziser CNC-Bearbeitung aus Meinerzhagen.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
@@ -143,8 +170,42 @@ function Index() {
         </div>
       </section>
 
+      {/* Einsatzbereiche */}
+      <section className="border-y border-border bg-secondary">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-signal">
+              Entlastung, wenn es darauf ankommt
+            </p>
+            <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+              Verlässliche Kapazitäten für Fertigungsleiter, Zulieferer und Einkäufer
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Engpässe in der Serienfertigung, aufwändige Sortierarbeiten oder
+              kapazitätsbindende Nachbearbeitungen gefährden Liefertermine und
+              Budgets. AHI-TEC übernimmt klar definierte Teil- oder Komplettprozesse
+              und schafft Freiraum für Ihre Kernfertigung.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {EINSATZBEREICHE.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title} className="border-l-2 border-signal pl-5">
+                  <Icon className="h-6 w-6 text-signal" aria-hidden="true" />
+                  <h3 className="mt-4 text-lg font-bold text-foreground">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.text}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Über uns */}
-      <section id="ueber-uns" className="scroll-mt-20 bg-secondary">
+      <section id="ueber-uns" className="scroll-mt-20">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-signal">
@@ -154,34 +215,67 @@ function Index() {
               Ihr Partner in Meinerzhagen
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              AHI-TEC ist Ihr zuverlässiger Industriedienstleister im Herzen des
-              Sauerlands. Wir unterstützen produzierende Unternehmen bei allen
-              Arbeiten rund um Metall-, Kunststoff- und Elektroteile – von der
-              manuellen Nachbearbeitung bis zur präzisen CNC-Bearbeitung.
+              Als inhabergeführter Industriedienstleister mit Sitz in Meinerzhagen
+              im Märkischen Kreis verstehen wir die täglichen Herausforderungen
+              von Fertigungsleitern, Zulieferern und Einkäufern. Technischer
+              Sachverstand, kurze Entscheidungswege und gewissenhaftes Arbeiten
+              bilden die Grundlage jeder Zusammenarbeit.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Ob Engpass in der Fertigung, Sonderaktion oder dauerhafte
-              Auslagerung: Wir liefern geprüfte Qualität, kurze Reaktionszeiten
-              und faire Konditionen.
+              Mit einem modernen Maschinenpark sowie sorgfältiger Handarbeits- und
+              Prüfmanufaktur übernehmen wir Teil- oder Komplettprozesse. Von der
+              spanabhebenden Zerspanung über die baugruppengenaue Montage bis zur
+              100%-Qualitätskontrolle stehen Präzision, Nachvollziehbarkeit und
+              Termintreue im Mittelpunkt.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { value: "100 %", label: "Qualitätsprüfung" },
-              { value: "Flexibel", label: "Kleinserie bis Dauerauftrag" },
-              { value: "Schnell", label: "Kurze Reaktionszeiten" },
-              { value: "Regional", label: "Standort Meinerzhagen" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl border border-border bg-card p-6 text-center"
-              >
-                <p className="text-2xl font-black text-primary">{stat.value}</p>
-                <p className="mt-1 text-xs font-medium text-muted-foreground">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+          <div className="bg-brand-deep p-7 sm:p-9">
+            <p className="text-xs font-semibold uppercase tracking-widest text-signal">
+              Werkstoffkompetenz
+            </p>
+            <h3 className="mt-3 text-2xl font-bold text-primary-foreground">
+              Sicher im Umgang mit anspruchsvollen Materialien
+            </h3>
+            <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+              {WERKSTOFFE.map((material) => (
+                <li key={material} className="flex items-center gap-3 text-sm text-primary-foreground/85">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-signal" aria-hidden="true" />
+                  {material}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Standort */}
+      <section className="bg-secondary">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="flex items-start gap-5">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-signal text-accent-foreground">
+              <MapPin className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-signal">
+                Logistischer Heimvorteil
+              </p>
+              <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">
+                Meinerzhagen – direkt an der BAB 45
+              </h2>
+              <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+                Unser Standort im Märkischen Kreis bietet kurze Wege in die
+                Industrieregionen Südwestfalens, des Ruhrgebiets und darüber hinaus.
+                Das erleichtert schnelle Anlieferungen, planbare Abholungen und
+                termingerechte Rückführungen Ihrer Werkstücke.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 border-l-2 border-signal pl-5 text-primary">
+            <RoadIcon className="h-7 w-7" aria-hidden="true" />
+            <div>
+              <p className="text-sm font-bold">Schnell angebunden</p>
+              <p className="text-xs text-muted-foreground">A45 · Märkischer Kreis</p>
+            </div>
           </div>
         </div>
       </section>
