@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Factory, MapPin, PackageCheck, Route, Users } from "lucide-react";
+import { CheckCircle2, Factory, MapPin, PackageCheck, Route as RoadIcon, Users } from "lucide-react";
 import { Header, Footer } from "@/components/site/Header";
 import heroImage from "@/assets/hero-parts.jpg";
 
@@ -271,7 +271,7 @@ function Index() {
             </div>
           </div>
           <div className="flex items-center gap-3 border-l-2 border-signal pl-5 text-primary">
-            <Route className="h-7 w-7" aria-hidden="true" />
+            <RoadIcon className="h-7 w-7" aria-hidden="true" />
             <div>
               <p className="text-sm font-bold">Schnell angebunden</p>
               <p className="text-xs text-muted-foreground">A45 · Märkischer Kreis</p>
