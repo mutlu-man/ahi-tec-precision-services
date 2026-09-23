@@ -23,7 +23,7 @@ export function Logo({ dark = false }: { dark?: boolean }) {
   );
 }
 
-export function Header() {
+export function Header({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -35,20 +35,20 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled
+        scrolled || solid
           ? "border-b border-border bg-background/95 backdrop-blur"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Logo dark={!scrolled} />
+        <Logo dark={!scrolled && !solid} />
         <nav className="hidden items-center gap-7 md:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
               className={`text-sm font-medium transition-colors ${
-                scrolled
+                scrolled || solid
                   ? "text-foreground hover:text-signal"
                   : "text-primary-foreground/90 hover:text-primary-foreground"
               }`}
